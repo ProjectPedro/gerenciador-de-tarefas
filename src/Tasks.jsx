@@ -12,7 +12,7 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
             {task.title}
           </button>
 
-          <button className="bg-green-500 p-2 rounded-md text-white">
+          <button className="bg-green-600 p-2 rounded-md text-white">
             <ChevronRightIcon />
           </button>
 
