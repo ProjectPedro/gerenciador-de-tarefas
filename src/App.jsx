@@ -8,16 +8,19 @@ function App() {
     {
       id: 1,
       title: "Estudar Programação",
+      description: "Estudar React e JavaScript",
       isCompleted: false,
     },
     {
       id: 2,
       title: "Ler um Livro",
+      description: "Ler 'O Senhor dos Anéis'",
       isCompleted: true,
     },
     {
       id: 3,
       title: "Fazer Exercícios",
+      description: "Correr 5km no parque",
       isCompleted: false,
     },
   ]);
