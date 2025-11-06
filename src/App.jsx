@@ -1,29 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tasks from "./Tasks.jsx";
 import AddTask from "./AddTask.jsx";
-import { v4 } from 'uuid';
+import { v4 } from "uuid";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Estudar Programação",
-      description: "Estudar React e JavaScript",
-      isCompleted: false,
-    },
-    {
-      id: 2,
-      title: "Ler um Livro",
-      description: "Ler 'O Senhor dos Anéis'",
-      isCompleted: true,
-    },
-    {
-      id: 3,
-      title: "Fazer Exercícios",
-      description: "Correr 5km no parque",
-      isCompleted: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
 
   function onTaskClick(taskId) {
     const newTasks = tasks.map((task) => {
@@ -48,7 +34,7 @@ function App() {
       description,
       isCompleted: false,
     };
-    setTasks([...tasks,newTask]);
+    setTasks([...tasks, newTask]);
   }
   return (
     <div className="w-screen h-screen bg-cyan-950  flex justify-center p-6">
@@ -57,7 +43,7 @@ function App() {
           {" "}
           Gerenciador de Tarefas{" "}
         </h1>
-        <AddTask onAddTaskSubmit={onAddTaskSubmit}/>
+        <AddTask onAddTaskSubmit={onAddTaskSubmit} />
         <Tasks
           tasks={tasks}
           onTaskClick={onTaskClick}
