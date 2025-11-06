@@ -22,7 +22,8 @@ function App() {
       const data = await response.json();
       setTasks(data);
     };
-    fetchInitialData();
+    //Teste , caso queira consumir uma API externa para popular as tarefas iniciais
+    //fetchInitialData();
   }, []);
 
   function onTaskClick(taskId) {
