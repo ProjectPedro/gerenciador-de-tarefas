@@ -1,6 +1,8 @@
+import { easeInOut, motion } from "framer-motion";
 import { ChevronLeftIcon } from "lucide-react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import Title from "../Title";
+import ButtonBackClick from "../ButtonBackClick";
 
 function TaskPage() {
   const [searchParams] = useSearchParams();
@@ -12,25 +14,48 @@ function TaskPage() {
     navigate(-1);
   }
 
-  return (
-    <div className="h-screen w-screen bg-cyan-950 p-6 flex justify-center items-center">
-      <div className="w-[500px] space-y-4">
-        <div className="flex justify-center relative mb-6">
-          <button
-            onClick={onBackClick}
-            className="bg-slate-200 text-cyan-900 rounded-md absolute left-0 top-0 -bottom-0 hover:bg-slate-300 transition"
-          >
-            <ChevronLeftIcon />
-          </button>
-          <Title>Detalhes da Tarefa</Title>
-        </div>
+  const springAnimation = {
+    opacity: 1,
+    y: 0,
+  };
 
-        <div className="bg-slate-200 p-6 rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-slate-100">
-          <h2 className="text-xl font-bold  text-cyan-900">{title}</h2>
-          <p className=" text-cyan-900">{description}</p>
+  const initialAnimation = {
+    opacity: 0,
+    y: 150,
+  };
+
+  const springTransition = {
+    type: "spring",
+    stiffness: 60,
+    damping: 18,
+    mass: 1,
+  };
+  return (
+    <motion.div
+      initial={initialAnimation}
+      animate={springAnimation}
+      transition={springTransition}
+    >
+      <div className="h-screen w-screen bg-cyan-950 p-6 flex justify-center items-center">
+        <div className="w-[500px] space-y-4 bg-slate-50 bordex-box p-6 rounded-xl shadow-lg">
+          <div className="flex justify-center relative mb-6">
+            <ButtonBackClick onClick={onBackClick}>
+              <ChevronLeftIcon />
+            </ButtonBackClick>
+            <Title>Detalhes da Tarefa</Title>
+          </div>
+
+          <div className=" cursor-pointer bg-slate-200 p-6 rounded-xl shadow-lg text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:bg-slate-100">
+            <h2 className="text-2xl font-bold text-cyan-900 mb-2 text-center tracking-wide">
+              {title}
+            </h2>
+            <p className=" text-cyan-900/80 text-center leading-relaxed">
+              {description}
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
