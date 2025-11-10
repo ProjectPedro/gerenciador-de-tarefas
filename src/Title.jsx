@@ -1,6 +1,8 @@
 function Title(props) {
   return (
-    <h1 className="text-3xl text-slate-100 font-bold text-center">{props.children}</h1>
+    <h1 className=" bg-slate-200 text-3xl text-cyan-950 font-bold text-center box-border p-4 rounded-xl shadow">
+      {props.children}
+    </h1>
   );
 }
 
