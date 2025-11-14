@@ -14,27 +14,12 @@ function TaskPage() {
     navigate(-1);
   }
 
-  const springAnimation = {
-    opacity: 1,
-    y: 0,
-  };
 
-  const initialAnimation = {
-    opacity: 0,
-    y: 150,
-  };
-
-  const springTransition = {
-    type: "spring",
-    stiffness: 60,
-    damping: 18,
-    mass: 1,
-  };
   return (
     <motion.div
-      initial={initialAnimation}
-      animate={springAnimation}
-      transition={springTransition}
+      initial={{ opacity: 0, y: 150 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ type: "spring", stiffness: 60, damping: 18, mass: 1, ease: easeInOut }}
     >
       <div className="h-screen w-screen bg-cyan-950 p-6 flex justify-center items-center">
         <div className="w-[500px] space-y-4 bg-slate-50 bordex-box p-6 rounded-xl shadow-lg">

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import Tasks from "./Tasks.jsx";
 import AddTask from "./AddTask.jsx";
 import { v4 } from "uuid";
@@ -53,18 +54,29 @@ function App() {
     setTasks([...tasks, newTask]);
   }
   return (
-    <div className="w-screen h-screen bg-cyan-950  flex justify-center p-6">
-      <div className="w-[500px] space-y-4">
-        <Title> Gerenciador de Tarefas </Title>
+    <motion.div
+      initial={{ opacity: 0, y: 150 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{
+        type: "spring",
+        stiffness: 60,
+        damping: 18,
+        mass: 1,
+      }}
+    >
+      <div className="w-screen h-screen bg-cyan-950  flex justify-center p-6">
+        <div className="w-[500px] space-y-4">
+          <Title> Gerenciador de Tarefas </Title>
 
-        <AddTask onAddTaskSubmit={onAddTaskSubmit} />
-        <Tasks
-          tasks={tasks}
-          onTaskClick={onTaskClick}
-          onDeleteTaskClick={onDeleteTaskClick}
-        />
+          <AddTask onAddTaskSubmit={onAddTaskSubmit} />
+          <Tasks
+            tasks={tasks}
+            onTaskClick={onTaskClick}
+            onDeleteTaskClick={onDeleteTaskClick}
+          />
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
