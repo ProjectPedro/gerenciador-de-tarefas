@@ -29,7 +29,12 @@ function Tasks({ tasks, onTaskClick, onDeleteTaskClick }) {
             <ChevronRightIcon />
           </ButtonDetails>
 
-          <ButtonDelete onClick={() => onDeleteTaskClick(task.id)}>
+          <ButtonDelete
+            onClick={() =>
+              window.confirm("Você tem Certeza que Quer Deletar essa Tarefa ?") &&
+              onDeleteTaskClick(task.id)
+            }
+          >
             <Trash2 />
           </ButtonDelete>
         </li>
