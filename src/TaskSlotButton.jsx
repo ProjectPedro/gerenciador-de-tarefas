@@ -3,9 +3,9 @@ function TaskSlotButton({task, ...props}) {
   return (
     <button
       {...props}
-      className={`bg-stone-400 text-left text-white p-2 rounded-md w-full ${
-        task.isCompleted && "bg-green-500"
-      } `}
+      className={`text-left text-white p-2 rounded-md w-full ${
+        task.isCompleted ? "bg-green-500" : "bg-stone-400"
+      }`}
     >
       {task.isCompleted && <CheckIcon className="inline mr-2" />}
         {task.title}
