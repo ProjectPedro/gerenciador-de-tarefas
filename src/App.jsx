@@ -64,7 +64,7 @@ function App() {
         mass: 1,
       }}
     >
-      <div className="w-screen h-screen bg-cyan-950  flex justify-center p-6">
+      <div className="w-screen h-screen gradient-bg flex justify-center p-6">
         <div className="w-[500px] space-y-4">
           <Title> Gerenciador de Tarefas </Title>
 

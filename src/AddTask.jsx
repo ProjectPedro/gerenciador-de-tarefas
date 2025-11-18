@@ -6,7 +6,7 @@ function AddTask({ onAddTaskSubmit }) {
   const [description, setDescription] = useState("");
 
   return (
-    <div className="space-y-4 p-6 bg-slate-200 rounded-md shadow flex flex-col">
+    <div className="space-y-4 p-6 bg-white/10 backdrop-blur-sm rounded-xl shadow flex flex-col">
       <Input
         type="text"
         placeholder="Digite o Titulo da Tarefa."
@@ -31,7 +31,7 @@ function AddTask({ onAddTaskSubmit }) {
           setTitle("");
           setDescription("");
         }}
-        className="bg-cyan-950 px-4 py-2 rounded-md text-white font-medium"
+        className="px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium hover:from purple-600 hover:to-cyan-600 transition-all duration-200 active:scale-95"
       >
         Adicionar Tarefa
       </button>

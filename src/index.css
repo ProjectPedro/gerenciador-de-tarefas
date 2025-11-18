@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    font-family: "Inter", sans-serif;
+  }
+}
+
+@layer components {
+  .card-modern {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-ai {
+    @apply px-3 py-2 rounded-lg bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-medium hover:from purple-600 hover:to-cyan-600 transition-all duration-200 active:scale-95;
+  }
+
+  .gradient-bg {
+    @apply bg-gradient-to-br from-cyan-900 via-cyan-950 to-slate-950;
+  }
+}
