@@ -1,5 +1,5 @@
 export async function generateSuggestedDescription(
-  taskTittle,
+  taskTitle,
   currentDescription
 ) {
   try {

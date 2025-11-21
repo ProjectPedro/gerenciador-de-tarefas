@@ -53,6 +53,16 @@ function App() {
     };
     setTasks([...tasks, newTask]);
   }
+
+  function onUpdateTask(taskId, newDescription) {
+    const newTasks = tasks.map((task) => {
+      if (taskId === task.id) {
+        return { ...task, description: newDescription };
+      }
+      return tasks;
+    });
+    setTasks(newTasks);
+  }
   return (
     <motion.div
       initial={{ opacity: 0, y: 150 }}
@@ -73,6 +83,7 @@ function App() {
             tasks={tasks}
             onTaskClick={onTaskClick}
             onDeleteTaskClick={onDeleteTaskClick}
+            onUpdateTask={onUpdateTask}
           />
         </div>
       </div>
