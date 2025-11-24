@@ -23,7 +23,7 @@ Por favor, sugira uma descrição MELHORADA e mais DETALHADA para esta tarefa qu
 
 Retorne APENAS a descrição sugerida, sem explicações adicionais.`;
 
-    const response = await fetch("https://api.groq.ai/v1/chat/completions", {
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
         "content-type": "application/json",

@@ -59,7 +59,7 @@ function App() {
       if (taskId === task.id) {
         return { ...task, description: newDescription };
       }
-      return tasks;
+      return task;
     });
     setTasks(newTasks);
   }
