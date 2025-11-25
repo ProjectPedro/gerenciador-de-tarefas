@@ -34,18 +34,6 @@ Um gerenciador de tarefas moderno e inteligente construído com React, apresenta
 
 ---
 
-##  Preview
-
-<div align="center">
-
-![Gerenciador de Tarefas com IA](https://github.com/ProjectPedro/gerenciador-de-tarefas/raw/main/preview.png)
-
-*Modal de sugestão de IA melhorando a descrição de uma tarefa*
-
-</div>
-
----
-
 ## 🛠️ Stack Tecnológico
 
 ###
